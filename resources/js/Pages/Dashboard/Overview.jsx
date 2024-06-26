@@ -16,13 +16,6 @@ const OverviewPage = ({ data }) => {
                     <span>{data.users}</span>
                 </Link>
                 <Link
-                    href={route("patients.index")}
-                    className="text-2xl p-4 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 flex justify-between"
-                >
-                    <h2>Patients</h2>
-                    <span>{data.patients}</span>
-                </Link>
-                <Link
                     href={route("rolePermissions.index")}
                     className="text-2xl p-4 rounded-md border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 flex justify-between"
                 >

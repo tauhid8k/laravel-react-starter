@@ -30,14 +30,6 @@ const SidebarMenu = () => {
                     text="Users"
                 />
             )}
-            {(role === "admin" || permissions.includes("view_patients")) && (
-                <SidebarMenuItem
-                    href={route("patients.index")}
-                    active={route().current("patients.index")}
-                    icon={<ClipboardPlus className="size-[22px]" />}
-                    text="Patients"
-                />
-            )}
             {(role === "admin" ||
                 permissions.includes("view_role_permissions")) && (
                 <SidebarMenuItem

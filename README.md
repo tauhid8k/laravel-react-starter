@@ -5,7 +5,7 @@
 -   DB_CONNECTION=mysql
 -   DB_HOST=127.0.0.1
 -   DB_PORT=3306
--   DB_DATABASE=patient_management_system
+-   DB_DATABASE=laravel_react_starter
 -   DB_USERNAME=
 -   DB_PASSWORD=
 
@@ -22,21 +22,20 @@
 ```
 
 ## Features
-- Everything is made from scratch with well crafted consistent design (light and dark mode)
+- Everything is made from scratch with well crafted consistent responsive design
+- Light and dark mode support
 - Responsive dashboard UI with reusable dropdown, modal, table, drawer, toast, dark mode, and more
 - User management with role and permissions (Admin can create user and assign role which has predefined permissions)
 - Role and permissions management (Role creation with permissions)
 - Permissions check in frontend and backend
-- Tanstack server-side table with pagination and search filter
-- Complex responsive dashboard sidebar
-- Patient management with previous records
+- Tanstack server-side table with pagination and filters
 - Predefined role and permissions seeder
-- 100 Patients seeder
+- 100 Users seeder
 
 ### Note
-- Initially, staff doesn't have any permissions other than just role
-- Admin has access to everything by default and has some security checks
-- Test role permissions on different browsers. One with staff and another with admin
+- Initially, There is admin and staff role created by seeder
+- Staff doesn't have any permissions by default
+- Admin has access to everything by default and is not visible to any other role
 
 ### Credentials
 Admin: `admin@example.com`  
