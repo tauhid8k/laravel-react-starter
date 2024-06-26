@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
 class EnsureUserHasRole
@@ -17,21 +16,17 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user()) {
-            if ($request->user()->getRoleNames()->count()) {
-                return $next($request);
-            } else {
-                Auth::guard('web')->logout();
+        $user = $request->user();
 
-                $request->session()->invalidate();
-                $request->session()->regenerateToken();
+        if ($user && $user->getRoleNames()->isEmpty()) {
+            Auth::guard('web')->logout();
 
-                // Return a custom validation response
-                $validator = Validator::make([], []);
-                $validator->errors()->add('role', 'Access denied. Please contact administrator');
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
 
-                return redirect()->route('login.view')->withErrors($validator);
-            }
+            return redirect()->route('login.view')->withErrors([
+                'role' => 'Access denied. Please contact administrator'
+            ]);
         }
 
         return $next($request);
