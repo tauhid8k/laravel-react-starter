@@ -4,7 +4,7 @@ import {
     DropdownItems,
     DropdownTrigger,
 } from "@/Components/Dropdown";
-import { EllipsisVertical, Eye, Pencil, Trash } from "lucide-react";
+import { EllipsisVertical, Eye, SquarePen, Trash } from "lucide-react";
 import Modal from "@/Components/Modal";
 import { useState } from "react";
 import { Link, useForm, usePage } from "@inertiajs/react";
@@ -85,7 +85,7 @@ export const columns = [
                                     as={Link}
                                     href={route("users.edit", { id })}
                                 >
-                                    <Pencil className="icon" />
+                                    <SquarePen className="icon" />
                                     <span>Edit</span>
                                 </DropdownItem>
                             )}

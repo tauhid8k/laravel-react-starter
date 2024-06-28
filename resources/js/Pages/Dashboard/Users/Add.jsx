@@ -31,7 +31,7 @@ const AddUserPage = ({ roles }) => {
                     className="grid grid-cols-1 md:grid-cols-2 gap-x-5 disabled:opacity-70"
                     disabled={processing}
                 >
-                    <div className="input-container">
+                    <div className="input-container col-span-2 lg:col-span-1">
                         <label htmlFor="name" className="input-label">
                             Name
                         </label>
@@ -46,7 +46,7 @@ const AddUserPage = ({ roles }) => {
                             <p className="input-error">{errors.name}</p>
                         )}
                     </div>
-                    <div className="input-container">
+                    <div className="input-container col-span-2 lg:col-span-1">
                         <label htmlFor="email" className="input-label">
                             Email
                         </label>
@@ -61,7 +61,7 @@ const AddUserPage = ({ roles }) => {
                             <p className="input-error">{errors.email}</p>
                         )}
                     </div>
-                    <div className="input-container">
+                    <div className="input-container col-span-2 lg:col-span-1">
                         <label htmlFor="password" className="input-label">
                             Password
                         </label>
@@ -78,7 +78,7 @@ const AddUserPage = ({ roles }) => {
                             <p className="input-error">{errors.password}</p>
                         )}
                     </div>
-                    <div className="input-container">
+                    <div className="input-container col-span-2 lg:col-span-1">
                         <label htmlFor="role" className="input-label">
                             Role
                         </label>

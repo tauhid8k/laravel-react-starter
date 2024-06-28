@@ -1,8 +1,8 @@
 import { usePage } from "@inertiajs/react";
 import SidebarMenuItem from "./SidebarMenuItem";
 import {
-    ClipboardPlus,
     LayoutGrid,
+    Pencil,
     ShieldCheck,
     UsersRound,
 } from "lucide-react";
@@ -28,6 +28,14 @@ const SidebarMenu = () => {
                     active={route().current("users.index")}
                     icon={<UsersRound className="size-[22px]" />}
                     text="Users"
+                />
+            )}
+            {role === "admin" && (
+                <SidebarMenuItem
+                    href={route("posts.index")}
+                    active={route().current("posts.index")}
+                    icon={<Pencil className="size-[22px]" />}
+                    text="Posts"
                 />
             )}
             {(role === "admin" ||

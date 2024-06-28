@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index()
     {
         $userCount = User::count();
-        $rolesCount = Role::count();
+        $rolesCount = Role::whereNot('name', 'admin')->count();
 
         return inertia('Dashboard/Overview', ['data' => [
             'users' => $userCount,

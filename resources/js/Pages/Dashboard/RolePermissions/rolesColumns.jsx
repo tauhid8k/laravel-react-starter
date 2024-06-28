@@ -12,7 +12,7 @@ export const rolesColumns = [
         cell: ({ row }) => {
             const { name } = row.original;
             return (
-                <span className="text-lg font-medium capitalize px-3 py-1 rounded-full text-zinc-700 dark:text-white bg-zinc-200 dark:bg-zinc-900">
+                <span className="text-lg capitalize px-3 py-1 rounded-full text-zinc-700 dark:text-white bg-zinc-200 dark:bg-zinc-900">
                     {name}
                 </span>
             );
@@ -57,7 +57,7 @@ export const rolesColumns = [
                         {can?.edit_role_permissions && (
                             <Link
                                 href={route("rolePermissions.show", { id })}
-                                className="btn btn-secondary w-fit"
+                                className="btn-sm btn-secondary w-fit"
                             >
                                 <Shield className="icon" />
                                 <span>Permissions</span>
@@ -66,7 +66,7 @@ export const rolesColumns = [
                         {can?.delete_role_permissions && (
                             <button
                                 onClick={() => setConfirmRoleDelete(true)}
-                                className="btn btn-danger"
+                                className="btn-sm btn-danger"
                             >
                                 <Trash className="icon" />
                                 <span>Delete</span>

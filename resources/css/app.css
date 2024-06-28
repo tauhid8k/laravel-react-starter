@@ -18,6 +18,9 @@ body {
 .btn {
     @apply h-10 px-3.5 flex items-center justify-center gap-x-1 text-center font-medium rounded-md text-lg border border-transparent text-white dark:text-zinc-300 disabled:opacity-70 disabled:pointer-events-none transition-colors;
 }
+.btn-sm {
+    @apply h-9 px-2.5 flex items-center justify-center gap-x-1 text-center rounded-md text-lg border border-transparent text-white dark:text-zinc-300 disabled:opacity-70 disabled:pointer-events-none transition-colors;
+}
 .btn-primary {
     @apply bg-blue-600 hover:bg-blue-700 dark:bg-zinc-700 dark:hover:bg-zinc-600/80;
 }
@@ -52,7 +55,7 @@ body {
 
 /* Form */
 .input-container {
-    @apply flex flex-col gap-y-1 mb-3 col-span-2 lg:col-span-1;
+    @apply flex flex-col gap-y-1 mb-3;
 }
 .input-label {
     @apply font-medium tracking-wide;

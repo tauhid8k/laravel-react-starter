@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\RolePermissionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RolePermissionController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return inertia('Home');
@@ -31,4 +32,6 @@ Route::prefix('dashboard')->middleware(['auth'])->group(function () {
 
     // Users
     Route::resource('/users', UserController::class);
+    // Posts
+    Route::resource('/posts', PostController::class);
 });
